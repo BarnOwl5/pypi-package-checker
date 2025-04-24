@@ -1,8 +1,9 @@
-import os
+import os, sys
 import json
 import requests
 import re
 
+sys.path.append(os.path.dirname(__file__))
 # 파일 중복 방지
 def get_unique_filename(base_path, base_name):
     filename = f"{base_path}/{base_name}.json"
@@ -21,6 +22,7 @@ def is_valid_length(name) :
     return len(name) <= 50
 
 def check_package_info(package_name):
+    global result
     url = f"https://pypi.org/pypi/{package_name}/json"
     response = requests.get(url)
 
@@ -56,20 +58,24 @@ def check_package_info(package_name):
             "github_url": github_url
         }
 
-    # 📁 결과 저장
-    os.makedirs("D:/results", exist_ok=True)
-    filename = get_unique_filename("D:/results", package_name)
+# 📁 결과 저장
+def run_check_flow(package_name) :
+    if is_valid_package_name(package_name) and is_valid_length :
+        check_package_info(package_name)
+        filename = save_result(result["name"], result) 
+        return filename
+    else :
+        print("invalid package name. Try again :(")
+    
+def save_result(package_name,result) :
+    base_dir = os.path.dirname(os.path.abspath(__file__))  # 현재 .py 파일 위치
+    results_dir = os.path.join(base_dir, "results")
+    os.makedirs(results_dir, exist_ok=True)
+
+    filename = get_unique_filename(results_dir, package_name)
 
     with open(filename, "w", encoding="utf-8") as f:
         json.dump(result, f, indent=4, ensure_ascii=False)
         print(f"[✔] '{os.path.basename(filename)}' saved successfully!\n")
 
-# 테스트 실행
-if __name__ == "__main__" :
-    package_name = input("input package name : ")
-
-    if is_valid_package_name(package_name) and is_valid_length(package_name):
-        check_package_info(package_name)
-
-    else:
-        print("invalid package name. Try again :(")
+    return filename
