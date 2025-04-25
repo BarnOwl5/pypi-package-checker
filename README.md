@@ -22,15 +22,20 @@ AI가 추천해주는 패키지 이름이 모호하다면 사용자는 언제든
 ### 4-1. 메인 메뉴
 - 프로그램 실행 직후 출력되는 메뉴
 
+<img src="/SourceCode/images/1.main_menu.png" width="450px" height="300"></img>
 ### 4-2. [1] 패키지 확인
 - 패키지 이름 입력 -> 존재 여부 및 마지막 업데이트 결과 출력
 
+<img src="/SourceCode/images/2.package_check1.png" width="450px" height="300"></img>
 ### 4-3. [2] 조회 내역 확인
 - 저장된 .json 파일 목록 확인 및 선택 시 상세 내용 출력
 
+<img src="/SourceCode/images/3.history.png" width="450px" height="300"></img>
 ### 4-4. [3] 도움말 보기
 - 프로젝트 제작 의도와 CLI 명령 안내가 포함됩니다.
-
+  
+<img src="/SourceCode/images/4.helptut.png" width="450px" height="300"></img>
+<img src="/SourceCode/images/5.helptut2.png" width="450px" height="300"></img>
 ## 5. 유지 및 피드백
 프로젝트는 현재 완성된 상태지만, 필요 시 언제든지 기능을 추가하거나 수정할 계획입니다.
 - 코드에 대한 피드백은 언제든 부탁드립니다.
