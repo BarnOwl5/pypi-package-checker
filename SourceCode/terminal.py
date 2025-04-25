@@ -46,7 +46,7 @@ class User :
         
         print("\n[1] Check a Single Package \n[2] Package History \n[3] Show help & usage guide \n[0] Exit")
 
-        select = input("\ndEnter your choice [?] : ")
+        select = input("\nEnter your choice [?] : ")
 
     def check_single_package(self):
         try : 
