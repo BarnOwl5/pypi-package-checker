@@ -32,11 +32,11 @@ AI가 추천해주는 패키지 이름이 모호하다면 사용자는 언제든
 ### 4-2. [1] 패키지 확인
 - 패키지 이름 입력 -> 존재 여부 및 마지막 업데이트 결과 출력
 
-<img src="/SourceCode/images/2.package_check1.png" width="450px" height="300"></img>
+<img src="/SourceCode/images/2.package_check2.png" width="450px" height="300"></img>
 ### 4-3. [2] 조회 내역 확인
 - 저장된 .json 파일 목록 확인 및 선택 시 상세 내용 출력
 
-<img src="/SourceCode/images/3.history.png" width="450px" height="300"></img>
+<img src="/SourceCode/images/3.history2.png" width="450px" height="300"></img>
 ### 4-4. [3] 도움말 보기
 - 프로젝트 제작 의도와 CLI 명령 안내가 포함됩니다.
   
