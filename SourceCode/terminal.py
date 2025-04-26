@@ -16,20 +16,20 @@ class User :
     def __init__(self) :
         self.username = getpass.getuser()
         self.timeline = time.strftime("%y/%m/%d")
-        self.history = [] # 결과 누적 저장장
+        self.history = [] # 결과 누적 저장
     
     def show_recent_packages(self):
         results_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "results")
         if not os.path.exists(results_dir):
-            print("\n[ Recent Packages ]\nEmpty.")
+            print("[ Recent Packages ]\nEmpty.")
             return
 
         files = [f for f in os.listdir(results_dir) if f.endswith(".json")]
         if not files:
-            print("\n[ Recent Packages ]\nEmpty.")
+            print("[ Recent Packages ]\nEmpty.")
             return
 
-        print("\n[ Recent Packages ]\n")
+        print("[ Recent Packages ]\n")
         recent = sorted(files, key=lambda f: os.path.getmtime(os.path.join(results_dir, f)), reverse=True)[:3]
         for f in recent:
             path = os.path.join(results_dir, f)
@@ -53,7 +53,7 @@ class User :
             while True :
                 clear_screen()
                 package_name = input("\nEnter package name (Ctrl+C cancel) : ")
-                filename = run_check_flow(package_name).lower()
+                filename = run_check_flow(package_name)
 
                 if filename : 
                     with open(filename, "r", encoding="utf-8") as f:
@@ -62,9 +62,10 @@ class User :
                         for key, value in data.items() :
                             print(f"{key} : {value}"+"\n")
                     pause_screen()
+
         except KeyboardInterrupt :
             print("\n\n[!] Cancelled by user. Returning to menu...\n")
-            time.sleep(1)
+            time.sleep(0.5)
             return
 
     def show_history(self):
@@ -84,17 +85,13 @@ class User :
                 print("Empty. No .json package records found.")
                 input("\nPress Enter to return to menu...")
                 return
-
             for f in sorted(files):
                 path = os.path.join(results_dir, f)
                 timestamp = os.path.getmtime(path)
                 readable_time = datetime.fromtimestamp(timestamp).strftime("%Y-%m-%d %H:%M:%S")
                 print(f"{f}  (saved: {readable_time})")
 
-            show_input = input("\nEnter file name to view (or type 'exit' to return): ").strip()
-
-            if show_input.lower() == "exit":
-                return
+            show_input = input("\nEnter file name to view (or press 'enter' to return): ").strip()
 
             # 자동 확장자, 소문자 처리
             if not show_input.endswith(".json"):
@@ -115,7 +112,7 @@ class User :
                 except Exception as e:
                     print(f"\n[!] Error reading file '{filename}': {e}")
             else:
-                print(f"\n[!] File '{filename}' not found.")
+                return
             
             input("\nPress Enter to return to the list...")
 
@@ -143,4 +140,7 @@ while True :
     if select == '1': stool.check_single_package()
     elif select == '2': stool.show_history()
     elif select == '3': stool.show_help()
-    else : break
+    else : 
+        print("\nExit Tool...\n")
+        time.sleep(1)
+        break

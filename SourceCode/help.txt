@@ -1,8 +1,8 @@
-📦  Welcome to PyPI Package Checker CLI Tool
+📦 Welcome to PyPI Package Checker CLI Tool
 
 This tool helps you:
 - Check if a Python package exists on PyPI
-- See last update time and GitHub URL
+- See last update time and GitHub URL, and more.
 - Automatically save results to 'results/' folder
 - View your history with timestamps
 
@@ -18,21 +18,6 @@ This tool helps you:
 
 ------------------------------------------------------------------------------------------
 ** Security Notice **
-
-    ___    ________   _________
-   / _ \  |  ____  | |  _____ |
-  | |_| | | |  BbyongCannon | |
-   \___/  |________| |________|
-     ||     ||||       ||||
-     ||     ||||       ||||
-    /||\   / || \     / || \
-   | || | |  ||  |   |  ||  |
-   | || | |  ||  |   |  ||  |
-   \_||_/ \__||__/   \__||__/
-
-  🔔 Unauthorized Action Detected  
-  🛡 Deploying BbyongCannon in 3... 2... 1...
-
 
 This tool is not intended for malicious use or automation against remote environments.  
 Please use responsibly.  
