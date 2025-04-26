@@ -29,7 +29,7 @@ class User :
             print("[ Recent Packages ]\nEmpty.")
             return
 
-        print("[ Recent Packages ]\n")
+        print("[Recent Packages ]\n")
         recent = sorted(files, key=lambda f: os.path.getmtime(os.path.join(results_dir, f)), reverse=True)[:3]
         for f in recent:
             path = os.path.join(results_dir, f)
