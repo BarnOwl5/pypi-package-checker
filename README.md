@@ -1,5 +1,5 @@
 # PyPI Package Checker [WIP]
-
+Updated at 2025.08.21
 ## 1. About
 PyPI Package Checker는 PyPI API를 활용해 입력한 패키지가 실제로 존재하는지를 간단히 확인할 수 있는 CLI 도구입니다.
 
