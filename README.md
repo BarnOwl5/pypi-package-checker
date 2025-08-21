@@ -1,4 +1,8 @@
 # PyPI Package Checker [WIP]
+![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)
+![Python](https://img.shields.io/badge/Python-3.10%2B-green.svg)
+![Status](https://img.shields.io/badge/Status-WIP-orange.svg)
+
 Updated at 2025.08.21
 ## 1. About
 PyPI Package Checker는 PyPI API를 활용해 입력한 패키지가 실제로 존재하는지와 최신 상태를 간단히 확인할 수 있는 CLI 도구입니다.
